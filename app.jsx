@@ -220,10 +220,10 @@ Responde SOLO con JSON sin backticks:
   "alerta": "frase directa sobre el mayor riesgo cultural de esta marca hoy"
 }`;
 
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, messages: [{ role: "user", content: prompt }] })
+        body: JSON.stringify({ prompt })
       });
       const data = await res.json();
       const texto = data.content?.map(i => i.text || "").join("") || "";
@@ -309,7 +309,7 @@ Responde SOLO con JSON sin backticks:
             <div style={{ textAlign: "center", marginBottom: "28px" }}>
               <div style={{ fontSize: "28px", marginBottom: "12px" }}>🔍</div>
               <div style={{ fontSize: "18px", fontWeight: 800, color: "#e8e6e1", marginBottom: "8px" }}>Tu diagnóstico está listo</div>
-              <div style={{ fontSize: "13px", color: "#7a7a90", lineHeight: 1.7 }}>Ingresa tus datos para acceder a los resultados de <strong style={{ color: "#c9b99a" }}>{empresa}</strong>.</div>
+              <div style={{ fontSize: "13px", color: "#7a7a90", lineHeight: 1.7 }}>Ingresa tus datos para acceder a los resultados.</div>
             </div>
             <label style={s.label}>TU NOMBRE</label>
             <input style={s.input} placeholder="Ej: Carlos Mendoza" value={nombre} onChange={e => setNombre(e.target.value)} />

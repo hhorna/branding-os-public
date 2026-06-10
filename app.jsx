@@ -294,15 +294,11 @@ Responde SOLO con JSON sin backticks:
               {respuestas[preguntaActual.id] && paso < TOTAL - 1 && (
                 <button style={s.btn} onClick={() => setPaso(p => p + 1)}>Siguiente →</button>
               )}
+              {todasRespondidas && paso === TOTAL - 1 && (
+                <button style={s.btn} onClick={() => setFase("capture")}>Ver mi diagnóstico →</button>
+              )}
             </div>
           </div>
-
-          {todasRespondidas && (
-            <div style={{ ...s.card, textAlign: "center" }}>
-              <div style={{ fontSize: "13px", color: "#7a7a90", marginBottom: "12px" }}>✓ Diagnóstico completado — {TOTAL} preguntas respondidas</div>
-              <button style={s.btn} onClick={() => setFase("capture")}>Ver mi diagnóstico →</button>
-            </div>
-          )}
         </div>
       )}
 

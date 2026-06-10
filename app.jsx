@@ -61,6 +61,30 @@ function App() {
 
   async function generate() {
     setPhase("loading");
+
+    // Enviar lead a Formspree
+    try {
+      await fetch("https://formspree.io/f/mbdekeee", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre,
+          email,
+          empresa,
+          sector,
+          fecha: new Date().toLocaleString("es-PE"),
+          ambiente: disco.ambiente || "",
+          liderazgo: disco.liderazgo || "",
+          motivacion: disco.motivacion || "",
+          autonomia: disco.autonomia || "",
+          coordinacion: disco.coordinacion || "",
+          gestion: disco.gestion || "",
+        })
+      });
+    } catch (e) {
+      console.log("Formspree error:", e);
+    }
+
     try {
       const prompt = `Eres un estratega de marca de Dreizack Studios. Genera un diagnóstico de marca PARCIAL para mostrar como lead magnet. El objetivo es mostrar valor suficiente para que el cliente quiera una sesión completa.
 

@@ -12,7 +12,7 @@ const DISCO_VARS = [
 const s = {
   wrap: { background: "#0a0a0f", minHeight: "100vh", color: "#e8e6e1", fontFamily: "'Inter', system-ui, sans-serif" },
   banner: { width: "100%", height: "120px", background: "#0a2a4a", display: "flex", alignItems: "center", justifyContent: "center" },
-  bannerImg: { width: "100%", display: "block", maxHeight: "180px", objectFit: "cover", objectPosition: "center top" },
+  bannerImg: { width: "100%", display: "block", maxHeight: "220px", objectFit: "contain", background: "#0a1628" },
   hero: { textAlign: "center", padding: "64px 24px 48px", maxWidth: "680px", margin: "0 auto" },
   badge: { display: "inline-block", background: "#c9b99a22", border: "1px solid #c9b99a44", color: "#c9b99a", fontSize: "10px", letterSpacing: "0.2em", padding: "5px 14px", borderRadius: "20px", marginBottom: "24px" },
   h1: { fontSize: "clamp(24px, 4vw, 38px)", fontWeight: 800, lineHeight: 1.2, color: "#e8e6e1", marginBottom: "16px" },

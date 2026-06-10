@@ -12,7 +12,7 @@ const DISCO_VARS = [
 const s = {
   wrap: { background: "#0a0a0f", minHeight: "100vh", color: "#e8e6e1", fontFamily: "'Inter', system-ui, sans-serif" },
   banner: { width: "100%", height: "120px", background: "#0a2a4a", display: "flex", alignItems: "center", justifyContent: "center" },
-  bannerImg: { width: "100%", display: "block", maxHeight: "300px", objectFit: "contain", background: "#0a1628" },
+  bannerImg: { width: "100%", display: "block", objectFit: "cover", objectPosition: "center" },
   hero: { textAlign: "center", padding: "64px 24px 48px", maxWidth: "680px", margin: "0 auto" },
   badge: { display: "inline-block", background: "#c9b99a22", border: "1px solid #c9b99a44", color: "#c9b99a", fontSize: "10px", letterSpacing: "0.2em", padding: "5px 14px", borderRadius: "20px", marginBottom: "24px" },
   h1: { fontSize: "clamp(24px, 4vw, 38px)", fontWeight: 800, lineHeight: 1.2, color: "#e8e6e1", marginBottom: "16px" },
@@ -134,7 +134,7 @@ Responde SOLO con JSON, sin backticks:
       {/* BANNER — reemplaza el div por: <img src="URL_DE_TU_BANNER" style={s.bannerImg} /> */}
       <div style={s.banner}>
         <img
-          src="https://static.wixstatic.com/media/987718_29dbdf29e29b40599097e5bf2d5f890f~mv2.png"
+          src="https://static.wixstatic.com/media/987718_584fe7bd8733465ebbc38dbe57ef4433~mv2.jpeg"
           style={s.bannerImg}
           alt="Dreizack Studios"
           onError={e => { e.target.style.display='none'; }}

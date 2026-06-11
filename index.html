@@ -93,10 +93,11 @@ function App() {
 
     try {
       await fetch(MAKE_WEBHOOK, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
+  method: "POST",
+  mode: "no-cors",
+  headers: { "Content-Type": "text/plain" },
+  body: JSON.stringify(payload)
+});
     } catch (e) {
       // CORS error es normal — Make igual recibe los datos
       // El navegador bloquea la respuesta pero el webhook fue disparado
